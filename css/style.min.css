@@ -1,3 +1,5 @@
+
+
 html {
   box-sizing: border-box;
 }
@@ -230,6 +232,47 @@ body {
   border-radius: 12px;
   grid-area: 1/1;
 }
+
+.language-list {
+  display: flex;
+  padding: 10px;
+  margin-left: 40px;
+}
+
+@media screen and (max-width:1209px) {
+  .language-list {
+   margin-left: 0px;
+   padding: 0px;
+  }
+}
+
+
+.language-icon {
+  height: 40px;
+  width: 40px;
+}
+
+.language-icon.icon-en {
+border-right: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.language-icon.icon-cn {
+  border-left: 1px solid rgba(0, 0, 0, 0.6);
+  }
+
+
+.language-icon.is-active {
+    background-color: #f6f6f6;
+    border-radius: 40px;
+}
+
+@media screen and (max-width:1209px) {
+  .language-icon.is-active {
+    background-color: #8abf1a;
+  }
+}
+
+
 @media screen and (min-width: 1210px) {
   .header .buttons {
     grid-template-columns: 138px 172px 16px;
