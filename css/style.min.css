@@ -283,12 +283,13 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
   .header .buttons {
     column-gap: 7px;
   }
-
+}
 
 @media screen and (min-width: 1210px) {
   .header .buttons {
     grid-template-columns: 138px 172px 16px;
   }
+
   .header .buttons .button svg {
     transition: all 0.3s ease;
     display: block;
@@ -419,6 +420,7 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
   -ms-flex-align: 24px;
   margin-bottom: unset;
 }
+
 .mob__header .mob__menu li {
   margin-right: unset;
   margin-bottom: 22px;
@@ -1580,5 +1582,4 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
 
 .benefits__description a {
   text-decoration: underline;
-}
 }
