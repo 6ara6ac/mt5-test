@@ -259,14 +259,6 @@ body {
   }
 }
 
-.language-icon.icon-en {
-border-right: 1px solid rgba(0, 0, 0, 0.6);
-}
-
-.language-icon.icon-cn {
-  border-left: 1px solid rgba(0, 0, 0, 0.6);
-  }
-
 
 .language-icon.is-active {
     background-color: #f6f6f6;
