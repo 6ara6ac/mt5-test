@@ -252,6 +252,13 @@ body {
   width: 40px;
 }
 
+@media screen and (max-width:767px) {
+  .language-icon {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 .language-icon.icon-en {
 border-right: 1px solid rgba(0, 0, 0, 0.6);
 }
