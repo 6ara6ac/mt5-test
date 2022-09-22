@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <style>
+        @font-face {
+            font-family: 'Gilroy-Regular';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url('fonts/Gilroy-Regular.woff') format('woff'),
+                url('fonts/Gilroy-Regular.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Gilroy-Medium';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 500;
+            src: url('fonts/Gilroy-Medium.woff') format('woff'),
+                url('fonts/Gilroy-Medium.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Firewall';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 400;
+            src: url('fonts/FairwallSans-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Gilroy-Semi';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 600;
+            src: url('fonts/Gilroy-Semibold.woff') format('woff'),
+                url('fonts/Gilroy-Semibold.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Gilroy-Bold';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 700;
+            src: url('fonts/Gilroy-Bold.woff') format('woff'),
+                url('fonts/Gilroy-Bold.woff2') format('woff2');
+        }
+    </style>
+
+    <title>MT5 Lime</title>
+    <meta name="robots" content="max-image-preview:large">
+    <link rel="dns-prefetch" href="//code.jquery.com">
+
+    <link rel="alternate" type="application/rss+xml" title="MT5 Lime » Лента" href="http://testtest2.site/feed/">
+    <link rel="alternate" type="application/rss+xml" title="MT5 Lime » Лента комментариев"
+        href="http://testtest2.site/comments/feed/">
+    <style>
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel="stylesheet" id="wp-block-library-css" href="css/style.min_1.css" media="all">
+    <style id="global-styles-inline-css">
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('index_1.html#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('index_1.html#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('index_1.html#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('index_1.html#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('index_1.html#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('index_1.html#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('index_1.html#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('index_1.html#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+    </style>
+    <link rel="stylesheet" id="limex-swiper-css" href="css/swiper-bundle.min.css" media="all">
+    <link rel="stylesheet" id="limex-aos-css" href="css/aos.css" media="all">
+    <link rel="stylesheet" id="limex-style-css" href="css/style.min.css" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?ver=6.0.1" id="jquery-js"></script>
+    <link rel="https://api.w.org/" href="http://testtest2.site/wp-json/">
+    <link rel="alternate" type="application/json" href="http://testtest2.site/wp-json/wp/v2/pages/21">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://testtest2.site/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://testtest2.site/wp-includes/wlwmanifest.xml">
+    <meta name="generator" content="WordPress 6.0.1">
+    <link rel="canonical" href="http://testtest2.site/">
+    <link rel="shortlink" href="http://testtest2.site/">
+    <link rel="alternate" type="application/json+oembed"
+        href="http://testtest2.site/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftesttest2.site%2F">
+    <link rel="alternate" type="text/xml+oembed"
+        href="http://testtest2.site/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ftesttest2.site%2F&format=xml">
+    <!-- HFCM by 99 Robots - Snippet # 1: Chat -->
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="js/7051690.js"></script>
+    <!-- End of HubSpot Embed Code -->
+    <!-- /end HFCM by 99 Robots -->
+    <link rel="icon" href="images/cropped-kopiya-lime-logo-for-web-white-and-green-01-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/cropped-kopiya-lime-logo-for-web-white-and-green-01-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="images/cropped-kopiya-lime-logo-for-web-white-and-green-01-180x180.png">
+    <meta name="msapplication-TileImage"
+        content="http://testtest2.site/wp-content/uploads/2022/08/cropped-kopiya-lime-logo-for-web-white-and-green-01-270x270.png">
+</head>
+
+<body class="home page-template-default page page-id-21">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0 0.49803921568627" />
+                    <fefuncg type="table" tableValues="0 0.49803921568627" />
+                    <fefuncb type="table" tableValues="0 0.49803921568627" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0 1" />
+                    <fefuncg type="table" tableValues="0 1" />
+                    <fefuncb type="table" tableValues="0 1" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <fefuncg type="table" tableValues="0 1" />
+                    <fefuncb type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0 1" />
+                    <fefuncg type="table" tableValues="0 0.27843137254902" />
+                    <fefuncb type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0 0" />
+                    <fefuncg type="table" tableValues="0 0.64705882352941" />
+                    <fefuncb type="table" tableValues="0 1" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0.78039215686275 1" />
+                    <fefuncg type="table" tableValues="0 0.94901960784314" />
+                    <fefuncb type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <fefuncg type="table" tableValues="0 1" />
+                    <fefuncb type="table" tableValues="0.44705882352941 0.4" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
+        style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <fecomponenttransfer color-interpolation-filters="sRGB">
+                    <fefuncr type="table" tableValues="0.098039215686275 1" />
+                    <fefuncg type="table" tableValues="0 0.66274509803922" />
+                    <fefuncb type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <fefunca type="table" tableValues="1 1" />
+                </fecomponenttransfer>
+                <fecomposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg>
+    <div class="overlay"></div>
+    <div id="page" class="site">
+
+        <header class="header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <div class="header__burger"><span></span></div>
+                    <div class="header__logo">
+                        <a href="https://lime.co"><img src="images/kopiya-lime-logo-for-web-white-and-green-01.png"
+                                alt></a>
+                    </div>
+                    <ul id="menu-menu-header" class="footer__menu header__menu">
+                        <li id="menu-item-76"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a
+                                href="#main"><b>Home</b></a></li>
+                        <li id="menu-item-77"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a
+                                href="#benefits"><b>Benefits of Lime</b></a></li>
+                        <li id="menu-item-78"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a
+                                href="#slider"><b>Benefits of MT5</b></a></li>
+                    </ul>
+                    <div class="buttons">
+                        <a class="button" href="http://quickstart.scorepriorityprime.com/?variant=mt5" target="_blank">
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_207_728)">
+                                    <path
+                                        d="M9.50008 0.791733C7.77774 0.791733 6.09407 1.30247 4.66199 2.25935C3.22992 3.21623 2.11375 4.57629 1.45463 6.16753C0.795521 7.75877 0.623067 9.50972 0.95908 11.199C1.29509 12.8882 2.12448 14.4399 3.34236 15.6578C4.56024 16.8757 6.11192 17.705 7.80117 18.0411C9.49042 18.3771 11.2414 18.2046 12.8326 17.5455C14.4239 16.8864 15.7839 15.7702 16.7408 14.3381C17.6977 12.9061 18.2084 11.2224 18.2084 9.50006C18.2057 7.1913 17.2873 4.97789 15.6548 3.34535C14.0223 1.71281 11.8088 0.794456 9.50008 0.791733ZM9.50008 16.6251C8.09089 16.6251 6.71335 16.2072 5.54165 15.4243C4.36995 14.6414 3.45672 13.5286 2.91744 12.2267C2.37817 10.9248 2.23707 9.49216 2.51199 8.11004C2.78691 6.72793 3.4655 5.45838 4.46195 4.46193C5.4584 3.46548 6.72795 2.78689 8.11006 2.51197C9.49218 2.23705 10.9248 2.37815 12.2267 2.91742C13.5286 3.4567 14.6414 4.36993 15.4243 5.54163C16.2072 6.71332 16.6251 8.09087 16.6251 9.50006C16.623 11.3891 15.8716 13.2001 14.5359 14.5359C13.2002 15.8716 11.3891 16.623 9.50008 16.6251Z"
+                                        fill="black" />
+                                    <path
+                                        d="M12.9232 6.93744L8.73213 10.7794L6.89309 8.94036C6.82006 8.86474 6.7327 8.80443 6.63611 8.76294C6.53953 8.72145 6.43565 8.69961 6.33053 8.6987C6.22541 8.69779 6.12116 8.71782 6.02387 8.75762C5.92658 8.79743 5.83819 8.85621 5.76386 8.93054C5.68952 9.00488 5.63074 9.09327 5.59093 9.19056C5.55113 9.28785 5.5311 9.3921 5.53201 9.49722C5.53293 9.60233 5.55476 9.70621 5.59626 9.8028C5.63775 9.89939 5.69806 9.98674 5.77367 10.0598L8.14867 12.4348C8.29294 12.5791 8.48734 12.6621 8.69134 12.6665C8.89533 12.6709 9.09315 12.5964 9.24354 12.4585L13.9935 8.10436C14.1483 7.96242 14.2403 7.76483 14.2494 7.55504C14.2584 7.34526 14.1838 7.14047 14.0418 6.98573C13.8999 6.83099 13.7023 6.73897 13.4925 6.72991C13.2827 6.72085 13.078 6.7955 12.9232 6.93744V6.93744Z"
+                                        fill="black" />
+                                </g>
+                                <defs>
+                                    <clippath id="clip0_207_728">
+                                        <rect width="19" height="19" fill="white" />
+                                    </clippath>
+                                </defs>
+                            </svg>
+                            Try demo </a>
+                        <a class="button color" href="https://open.lime.co/register?package=3" target="_blank">
+                            <svg width="16" height="18" viewBox="0 0 16 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.5438 8.34633C11.6788 7.50634 12.418 6.14692 12.418 4.61544C12.418 2.07052 10.3775 6.10352e-05 7.86951 6.10352e-05C5.36146 6.10352e-05 3.32101 2.07052 3.32101 4.61544C3.32101 6.14692 4.06013 7.50634 5.19523 8.34633C2.3736 9.44197 0.364502 12.2179 0.364502 15.4616C0.364502 16.8613 1.48674 18.0001 2.86617 18.0001H12.8728C14.2523 18.0001 15.3745 16.8613 15.3745 15.4616C15.3745 12.2179 13.3654 9.44197 10.5438 8.34633ZM4.68557 4.61544C4.68557 2.83401 6.11389 1.38469 7.86951 1.38469C9.62512 1.38469 11.0534 2.83401 11.0534 4.61544C11.0534 6.39688 9.62512 7.84623 7.86951 7.84623C6.11389 7.84623 4.68557 6.39688 4.68557 4.61544ZM12.8728 16.6154H2.86617C2.23917 16.6154 1.72906 16.0978 1.72906 15.4616C1.72906 12.0259 4.48362 9.23079 7.86954 9.23079C11.2555 9.23079 14.01 12.0259 14.01 15.4616C14.01 16.0978 13.4999 16.6154 12.8728 16.6154Z"
+                                    fill="black" />
+                            </svg>
+                            Open account </a>
+                        <a class="enter" href="https://myaccount.lime.co" target="_blank"><img src="images/enter.png"
+                                alt>
+                        </a>
+                    </div>
+                    <div class="language-block">
+                        <div class="language-list">
+                            <a data-lang="en" href="./index.html" class="list-item js-action" data-action="select-language">EN</a>
+                            <a data-lang="en" href="./cn.html" class="list-item active js-action" data-action="select-language">CN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mob__header">
+            <div class="close"><span>+</span></div>
+            <div class="star star__one">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.63838 0L10.4562 8.82054L19.2768 9.63838L10.4562 10.4562L9.63838 19.2768L8.82054 10.4562L0 9.63838L8.82054 8.82054L9.63838 0Z"
+                        fill="black" />
+                </svg>
+            </div>
+            <div class="header__logo">
+                <a href="https://lime.co"><img src="images/kopiya-lime-logo-for-web-white-and-green-01.png" alt></a>
+            </div>
+            <div class="star star__two">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.63838 0L10.4562 8.82054L19.2768 9.63838L10.4562 10.4562L9.63838 19.2768L8.82054 10.4562L0 9.63838L8.82054 8.82054L9.63838 0Z"
+                        fill="black" />
+                </svg>
+            </div>
+            <ul id="menu-menu-header-1" class="mob__menu footer__menu header__menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-76"><a
+                        href="#main"><b>Home</b></a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-77"><a
+                        href="#benefits"><b>Benefits of Lime</b></a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a
+                        href="#slider"><b>Benefits of MT5</b></a></li>
+            </ul>
+            <div class="buttons">
+                <a class="button" href="http://quickstart.scorepriorityprime.com/?variant=mt5" target="_blank">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_207_728)">
+                            <path
+                                d="M9.50008 0.791733C7.77774 0.791733 6.09407 1.30247 4.66199 2.25935C3.22992 3.21623 2.11375 4.57629 1.45463 6.16753C0.795521 7.75877 0.623067 9.50972 0.95908 11.199C1.29509 12.8882 2.12448 14.4399 3.34236 15.6578C4.56024 16.8757 6.11192 17.705 7.80117 18.0411C9.49042 18.3771 11.2414 18.2046 12.8326 17.5455C14.4239 16.8864 15.7839 15.7702 16.7408 14.3381C17.6977 12.9061 18.2084 11.2224 18.2084 9.50006C18.2057 7.1913 17.2873 4.97789 15.6548 3.34535C14.0223 1.71281 11.8088 0.794456 9.50008 0.791733ZM9.50008 16.6251C8.09089 16.6251 6.71335 16.2072 5.54165 15.4243C4.36995 14.6414 3.45672 13.5286 2.91744 12.2267C2.37817 10.9248 2.23707 9.49216 2.51199 8.11004C2.78691 6.72793 3.4655 5.45838 4.46195 4.46193C5.4584 3.46548 6.72795 2.78689 8.11006 2.51197C9.49218 2.23705 10.9248 2.37815 12.2267 2.91742C13.5286 3.4567 14.6414 4.36993 15.4243 5.54163C16.2072 6.71332 16.6251 8.09087 16.6251 9.50006C16.623 11.3891 15.8716 13.2001 14.5359 14.5359C13.2002 15.8716 11.3891 16.623 9.50008 16.6251Z"
+                                fill="black" />
+                            <path
+                                d="M12.9232 6.93744L8.73213 10.7794L6.89309 8.94036C6.82006 8.86474 6.7327 8.80443 6.63611 8.76294C6.53953 8.72145 6.43565 8.69961 6.33053 8.6987C6.22541 8.69779 6.12116 8.71782 6.02387 8.75762C5.92658 8.79743 5.83819 8.85621 5.76386 8.93054C5.68952 9.00488 5.63074 9.09327 5.59093 9.19056C5.55113 9.28785 5.5311 9.3921 5.53201 9.49722C5.53293 9.60233 5.55476 9.70621 5.59626 9.8028C5.63775 9.89939 5.69806 9.98674 5.77367 10.0598L8.14867 12.4348C8.29294 12.5791 8.48734 12.6621 8.69134 12.6665C8.89533 12.6709 9.09315 12.5964 9.24354 12.4585L13.9935 8.10436C14.1483 7.96242 14.2403 7.76483 14.2494 7.55504C14.2584 7.34526 14.1838 7.14047 14.0418 6.98573C13.8999 6.83099 13.7023 6.73897 13.4925 6.72991C13.2827 6.72085 13.078 6.7955 12.9232 6.93744V6.93744Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clippath id="clip0_207_728">
+                                <rect width="19" height="19" fill="white" />
+                            </clippath>
+                        </defs>
+                    </svg>
+                    Try demo </a>
+                <a class="button color" href="https://open.lime.co/register?package=3" target="_blank">
+                    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.5438 8.34633C11.6788 7.50634 12.418 6.14692 12.418 4.61544C12.418 2.07052 10.3775 6.10352e-05 7.86951 6.10352e-05C5.36146 6.10352e-05 3.32101 2.07052 3.32101 4.61544C3.32101 6.14692 4.06013 7.50634 5.19523 8.34633C2.3736 9.44197 0.364502 12.2179 0.364502 15.4616C0.364502 16.8613 1.48674 18.0001 2.86617 18.0001H12.8728C14.2523 18.0001 15.3745 16.8613 15.3745 15.4616C15.3745 12.2179 13.3654 9.44197 10.5438 8.34633ZM4.68557 4.61544C4.68557 2.83401 6.11389 1.38469 7.86951 1.38469C9.62512 1.38469 11.0534 2.83401 11.0534 4.61544C11.0534 6.39688 9.62512 7.84623 7.86951 7.84623C6.11389 7.84623 4.68557 6.39688 4.68557 4.61544ZM12.8728 16.6154H2.86617C2.23917 16.6154 1.72906 16.0978 1.72906 15.4616C1.72906 12.0259 4.48362 9.23079 7.86954 9.23079C11.2555 9.23079 14.01 12.0259 14.01 15.4616C14.01 16.0978 13.4999 16.6154 12.8728 16.6154Z"
+                            fill="black" />
+                    </svg>
+                    Open account </a>
+                <a class="enter" href="https://myaccount.lime.co" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_251_23)">
+                            <path
+                                d="M17.5002 0H8.3335C7.67046 0 7.03457 0.263392 6.56573 0.732233C6.09689 1.20107 5.8335 1.83696 5.8335 2.5V6.66667C5.8335 6.88768 5.92129 7.09964 6.07757 7.25592C6.23385 7.4122 6.44582 7.5 6.66683 7.5C6.88784 7.5 7.0998 7.4122 7.25609 7.25592C7.41237 7.09964 7.50016 6.88768 7.50016 6.66667V2.5C7.50016 2.27899 7.58796 2.06702 7.74424 1.91074C7.90052 1.75446 8.11248 1.66667 8.3335 1.66667H17.5002C17.7212 1.66667 17.9331 1.75446 18.0894 1.91074C18.2457 2.06702 18.3335 2.27899 18.3335 2.5V17.5C18.3335 17.721 18.2457 17.933 18.0894 18.0893C17.9331 18.2455 17.7212 18.3333 17.5002 18.3333H8.3335C8.11248 18.3333 7.90052 18.2455 7.74424 18.0893C7.58796 17.933 7.50016 17.721 7.50016 17.5V13.3333C7.50016 13.1123 7.41237 12.9004 7.25609 12.7441C7.0998 12.5878 6.88784 12.5 6.66683 12.5C6.44582 12.5 6.23385 12.5878 6.07757 12.7441C5.92129 12.9004 5.8335 13.1123 5.8335 13.3333V17.5C5.8335 18.163 6.09689 18.7989 6.56573 19.2678C7.03457 19.7366 7.67046 20 8.3335 20H17.5002C18.1632 20 18.7991 19.7366 19.2679 19.2678C19.7368 18.7989 20.0002 18.163 20.0002 17.5V2.5C20.0002 1.83696 19.7368 1.20107 19.2679 0.732233C18.7991 0.263392 18.1632 0 17.5002 0V0Z"
+                                fill="black" />
+                            <path
+                                d="M0.833333 10.8333H11.3217L10.2442 11.9108C10.1646 11.9877 10.1011 12.0796 10.0574 12.1813C10.0137 12.283 9.99075 12.3923 9.98979 12.503C9.98883 12.6136 10.0099 12.7234 10.0518 12.8258C10.0937 12.9282 10.1556 13.0212 10.2338 13.0995C10.3121 13.1777 10.4051 13.2396 10.5075 13.2815C10.61 13.3234 10.7197 13.3445 10.8303 13.3435C10.941 13.3426 11.0503 13.3196 11.152 13.2759C11.2537 13.2322 11.3456 13.1687 11.4225 13.0891L13.9225 10.5891C14.0755 10.4312 14.1611 10.2199 14.1611 9.99998C14.1611 9.78005 14.0755 9.56876 13.9225 9.41081L11.4225 6.91082C11.2653 6.75902 11.0548 6.67503 10.8363 6.67693C10.6178 6.67883 10.4088 6.76647 10.2543 6.92097C10.0998 7.07548 10.0122 7.28449 10.0103 7.50299C10.0084 7.72148 10.0924 7.93198 10.2442 8.08915L11.3217 9.16665H0.833333C0.61232 9.16665 0.400358 9.25445 0.244078 9.41073C0.0877974 9.567 0 9.77897 0 9.99998C0 10.221 0.0877974 10.433 0.244078 10.5892C0.400358 10.7455 0.61232 10.8333 0.833333 10.8333V10.8333Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clippath id="clip0_251_23">
+                                <rect width="20" height="20" fill="white" />
+                            </clippath>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+            <div class="star star__three">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.63838 0L10.4562 8.82054L19.2768 9.63838L10.4562 10.4562L9.63838 19.2768L8.82054 10.4562L0 9.63838L8.82054 8.82054L9.63838 0Z"
+                        fill="black" />
+                </svg>
+            </div>
+        </div>
+
+        <section class="main" id="main">
+            <div class="main__wrapper">
+                <div class="container">
+                    <div class="main__text">
+                        <div class="star star__one" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1500">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.63838 0L10.4562 8.82054L19.2768 9.63838L10.4562 10.4562L9.63838 19.2768L8.82054 10.4562L0 9.63838L8.82054 8.82054L9.63838 0Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <div class="star star__two" data-aos="zoom-in-up" data-aos-duration="1200">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.63838 0L10.4562 8.82054L19.2768 9.63838L10.4562 10.4562L9.63838 19.2768L8.82054 10.4562L0 9.63838L8.82054 8.82054L9.63838 0Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <div class="main__title title" data-aos="fade-up">Try trading with Lime Trading & MetaTrader 5
+                            for US stocks</div>
+                        <div class="main__subtitle subtitle" data-aos="fade-up" data-aos-delay="100"></div>
+                        <a class="main__button button color" data-aos="fade-up" data-aos-delay="200"
+                            href="https://open.lime.co/register?package=3" target="_blank">
+                            <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.5002 1.31045C9.41522 1.31045 7.3771 1.92871 5.64353 3.08704C3.90996 4.24537 2.55881 5.89175 1.76094 7.81799C0.963064 9.74423 0.754304 11.8638 1.16106 13.9087C1.56781 15.9536 2.5718 17.8319 4.04608 19.3062C5.52036 20.7805 7.39871 21.7845 9.44359 22.1912C11.4885 22.598 13.608 22.3892 15.5343 21.5913C17.4605 20.7935 19.1069 19.4423 20.2652 17.7087C21.4236 15.9752 22.0418 13.9371 22.0418 11.8521C22.0385 9.0573 20.9268 6.3779 18.9506 4.40167C16.9744 2.42544 14.295 1.31374 11.5002 1.31045V1.31045ZM11.5002 20.4771C9.7943 20.4771 8.12675 19.9713 6.70837 19.0235C5.29 18.0758 4.18451 16.7288 3.53171 15.1528C2.8789 13.5767 2.7081 11.8425 3.04089 10.1695C3.37369 8.49637 4.19514 6.95954 5.40137 5.75332C6.6076 4.54709 8.14443 3.72564 9.81751 3.39284C11.4906 3.06004 13.2248 3.23085 14.8008 3.88365C16.3768 4.53646 17.7239 5.64194 18.6716 7.06032C19.6193 8.47869 20.1252 10.1462 20.1252 11.8521C20.1226 14.1388 19.2131 16.3311 17.5962 17.9481C15.9792 19.5651 13.7869 20.4746 11.5002 20.4771V20.4771Z"
+                                    fill="white" />
+                                <path
+                                    d="M15.6441 8.74997L10.5706 13.4008L8.34443 11.1746C8.25603 11.083 8.15028 11.01 8.03336 10.9598C7.91644 10.9096 7.79069 10.8831 7.66344 10.882C7.53619 10.8809 7.41 10.9052 7.29222 10.9533C7.17445 11.0015 7.06745 11.0727 6.97747 11.1627C6.88749 11.2527 6.81633 11.3597 6.76814 11.4774C6.71996 11.5952 6.69571 11.7214 6.69681 11.8486C6.69792 11.9759 6.72436 12.1016 6.77458 12.2186C6.82481 12.3355 6.89781 12.4412 6.98935 12.5296L9.86435 15.4046C10.039 15.5793 10.2743 15.6798 10.5213 15.6852C10.7682 15.6905 11.0077 15.6003 11.1897 15.4334L16.9397 10.1626C17.127 9.99074 17.2384 9.75154 17.2494 9.4976C17.2604 9.24365 17.17 8.99575 16.9982 8.80843C16.8264 8.62111 16.5872 8.50971 16.3332 8.49875C16.0793 8.48779 15.8314 8.57815 15.6441 8.74997V8.74997Z"
+                                    fill="white" />
+                            </svg>
+                            Open an account </a>
+                        <div class="main__tabs">
+                            <div class="main__tabs--item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="main__tabs--item--title ">0$</div>
+                                <div class="main__tabs--item--subtitle subtitle">commission fees* </div>
+                            </div>
+                            <div class="main__tabs--item" data-aos="fade-up" data-aos-delay="350">
+                                <div class="main__tabs--item--title ">$500k</div>
+                                <div class="main__tabs--item--subtitle subtitle">SIPC Insurance</div>
+                            </div>
+                            <div class="main__tabs--item" data-aos="fade-up" data-aos-delay="350">
+                                <div class="main__tabs--item--title ">Free multi-device terminal</div>
+                                <div class="main__tabs--item--subtitle subtitle">Trade on desktop, tablet, or mobile all
+                                    on the same</div>
+                            </div>
+                            <div class="main__tabs--item" data-aos="fade-up" data-aos-delay="350">
+                                <div class="main__tabs--item--title ">Automated Trading</div>
+                                <div class="main__tabs--item--subtitle subtitle">Try your hand at automated trading even
+                                    with out</div>
+                            </div>
+                        </div>
+
+                        <p class="main__description">* MetaQuotes is a third party. MetaQuotes MetaTrader 5 product is
+                            available within the
+                            Lime
+                            Trader platform. Additional fees may apply.</p>
+                    </div>
+                </div>
+                <div class="main__image" data-aos="zoom-in-up" data-aos-delay="100">
+                    <!-- <img class="main__image--phone" data-aos="zoom-in-up" data-aos-delay="200" src="images/phone-1.png"
+                        alt> -->
+                    <img class="main__image--tablet" src="images/mainphone-1.png" alt>
+                    <img class="main__image--pc" data-aos="zoom-in-up" data-aos-delay="200"
+                        src="./images/mainpc-1024x768_1.png" alt>
+                </div>
+            </div>
+        </section>
+        <section class="benefits" id="benefits">
+            <div class="container">
+                <div class="benefits__wrapper">
+                    <div class="benefits__title title" data-aos="fade-up">Benefits of <span>Lime broker</span></div>
+                    <div class="benefits__list">
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="100">
+                            <img src="images/devices.png" alt>
+                            <div class="benefits__item--text">
+                                <div class="benefits__item--title">Virtual Private Server</div>
+                                <div class="benefits__item--subtitle">With the help of shared hosting, MetaTrader 5 can
+                                    work even when the computer is turned off. In just a few clicks, create a virtual
+                                    copy of your trading platform and launch it on a remote server</div>
+                                <a class="benefits__button button color" href="https://open.lime.co/register?package=3"
+                                    target="_blank">
+                                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.5002 1.31045C9.41522 1.31045 7.3771 1.92871 5.64353 3.08704C3.90996 4.24537 2.55881 5.89175 1.76094 7.81799C0.963064 9.74423 0.754304 11.8638 1.16106 13.9087C1.56781 15.9536 2.5718 17.8319 4.04608 19.3062C5.52036 20.7805 7.39871 21.7845 9.44359 22.1912C11.4885 22.598 13.608 22.3892 15.5343 21.5913C17.4605 20.7935 19.1069 19.4423 20.2652 17.7087C21.4236 15.9752 22.0418 13.9371 22.0418 11.8521C22.0385 9.0573 20.9268 6.3779 18.9506 4.40167C16.9744 2.42544 14.295 1.31374 11.5002 1.31045V1.31045ZM11.5002 20.4771C9.7943 20.4771 8.12675 19.9713 6.70837 19.0235C5.29 18.0758 4.18451 16.7288 3.53171 15.1528C2.8789 13.5767 2.7081 11.8425 3.04089 10.1695C3.37369 8.49637 4.19514 6.95954 5.40137 5.75332C6.6076 4.54709 8.14443 3.72564 9.81751 3.39284C11.4906 3.06004 13.2248 3.23085 14.8008 3.88365C16.3768 4.53646 17.7239 5.64194 18.6716 7.06032C19.6193 8.47869 20.1252 10.1462 20.1252 11.8521C20.1226 14.1388 19.2131 16.3311 17.5962 17.9481C15.9792 19.5651 13.7869 20.4746 11.5002 20.4771V20.4771Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.6441 8.74997L10.5706 13.4008L8.34443 11.1746C8.25603 11.083 8.15028 11.01 8.03336 10.9598C7.91644 10.9096 7.79069 10.8831 7.66344 10.882C7.53619 10.8809 7.41 10.9052 7.29222 10.9533C7.17445 11.0015 7.06745 11.0727 6.97747 11.1627C6.88749 11.2527 6.81633 11.3597 6.76814 11.4774C6.71996 11.5952 6.69571 11.7214 6.69681 11.8486C6.69792 11.9759 6.72436 12.1016 6.77458 12.2186C6.82481 12.3355 6.89781 12.4412 6.98935 12.5296L9.86435 15.4046C10.039 15.5793 10.2743 15.6798 10.5213 15.6852C10.7682 15.6905 11.0077 15.6003 11.1897 15.4334L16.9397 10.1626C17.127 9.99074 17.2384 9.75154 17.2494 9.4976C17.2604 9.24365 17.17 8.99575 16.9982 8.80843C16.8264 8.62111 16.5872 8.50971 16.3332 8.49875C16.0793 8.48779 15.8314 8.57815 15.6441 8.74997V8.74997Z"
+                                            fill="white" />
+                                    </svg>
+                                    Open an account </a>
+                            </div>
+                        </div>
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="175">
+                            <img src="images/coins.png" alt>
+                            <div class="benefits__item--text">
+                                <div class="benefits__item--title">$0 Commission Trading</div>
+                                <div class="benefits__item--subtitle">Take advantage of straightforward pricing with
+                                    unlimited, $0-commission trading on US-listed stocks and ETFs</div>
+                                <a class="benefits__button button color" href="https://open.lime.co/register?package=3"
+                                    target="_blank">
+                                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.5002 1.31045C9.41522 1.31045 7.3771 1.92871 5.64353 3.08704C3.90996 4.24537 2.55881 5.89175 1.76094 7.81799C0.963064 9.74423 0.754304 11.8638 1.16106 13.9087C1.56781 15.9536 2.5718 17.8319 4.04608 19.3062C5.52036 20.7805 7.39871 21.7845 9.44359 22.1912C11.4885 22.598 13.608 22.3892 15.5343 21.5913C17.4605 20.7935 19.1069 19.4423 20.2652 17.7087C21.4236 15.9752 22.0418 13.9371 22.0418 11.8521C22.0385 9.0573 20.9268 6.3779 18.9506 4.40167C16.9744 2.42544 14.295 1.31374 11.5002 1.31045V1.31045ZM11.5002 20.4771C9.7943 20.4771 8.12675 19.9713 6.70837 19.0235C5.29 18.0758 4.18451 16.7288 3.53171 15.1528C2.8789 13.5767 2.7081 11.8425 3.04089 10.1695C3.37369 8.49637 4.19514 6.95954 5.40137 5.75332C6.6076 4.54709 8.14443 3.72564 9.81751 3.39284C11.4906 3.06004 13.2248 3.23085 14.8008 3.88365C16.3768 4.53646 17.7239 5.64194 18.6716 7.06032C19.6193 8.47869 20.1252 10.1462 20.1252 11.8521C20.1226 14.1388 19.2131 16.3311 17.5962 17.9481C15.9792 19.5651 13.7869 20.4746 11.5002 20.4771V20.4771Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.6441 8.74997L10.5706 13.4008L8.34443 11.1746C8.25603 11.083 8.15028 11.01 8.03336 10.9598C7.91644 10.9096 7.79069 10.8831 7.66344 10.882C7.53619 10.8809 7.41 10.9052 7.29222 10.9533C7.17445 11.0015 7.06745 11.0727 6.97747 11.1627C6.88749 11.2527 6.81633 11.3597 6.76814 11.4774C6.71996 11.5952 6.69571 11.7214 6.69681 11.8486C6.69792 11.9759 6.72436 12.1016 6.77458 12.2186C6.82481 12.3355 6.89781 12.4412 6.98935 12.5296L9.86435 15.4046C10.039 15.5793 10.2743 15.6798 10.5213 15.6852C10.7682 15.6905 11.0077 15.6003 11.1897 15.4334L16.9397 10.1626C17.127 9.99074 17.2384 9.75154 17.2494 9.4976C17.2604 9.24365 17.17 8.99575 16.9982 8.80843C16.8264 8.62111 16.5872 8.50971 16.3332 8.49875C16.0793 8.48779 15.8314 8.57815 15.6441 8.74997V8.74997Z"
+                                            fill="white" />
+                                    </svg>
+                                    Open an account </a>
+                            </div>
+                        </div>
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="250">
+                            <img src="images/percent.png" alt>
+                            <div class="benefits__item--text">
+                                <div class="benefits__item--title">T﻿ransparent Pricing</div>
+                                <div class="benefits__item--subtitle">No monthly subscription fees and unlimited, $0
+                                    commission* trading on U.S.-listed stocks and ETFs, with direct low-cost access to
+                                    other global markets. Margin rates from 7.25%</div>
+                                <a class="benefits__button button color" href="https://open.lime.co/register?package=3"
+                                    target="_blank">
+                                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.5002 1.31045C9.41522 1.31045 7.3771 1.92871 5.64353 3.08704C3.90996 4.24537 2.55881 5.89175 1.76094 7.81799C0.963064 9.74423 0.754304 11.8638 1.16106 13.9087C1.56781 15.9536 2.5718 17.8319 4.04608 19.3062C5.52036 20.7805 7.39871 21.7845 9.44359 22.1912C11.4885 22.598 13.608 22.3892 15.5343 21.5913C17.4605 20.7935 19.1069 19.4423 20.2652 17.7087C21.4236 15.9752 22.0418 13.9371 22.0418 11.8521C22.0385 9.0573 20.9268 6.3779 18.9506 4.40167C16.9744 2.42544 14.295 1.31374 11.5002 1.31045V1.31045ZM11.5002 20.4771C9.7943 20.4771 8.12675 19.9713 6.70837 19.0235C5.29 18.0758 4.18451 16.7288 3.53171 15.1528C2.8789 13.5767 2.7081 11.8425 3.04089 10.1695C3.37369 8.49637 4.19514 6.95954 5.40137 5.75332C6.6076 4.54709 8.14443 3.72564 9.81751 3.39284C11.4906 3.06004 13.2248 3.23085 14.8008 3.88365C16.3768 4.53646 17.7239 5.64194 18.6716 7.06032C19.6193 8.47869 20.1252 10.1462 20.1252 11.8521C20.1226 14.1388 19.2131 16.3311 17.5962 17.9481C15.9792 19.5651 13.7869 20.4746 11.5002 20.4771V20.4771Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.6441 8.74997L10.5706 13.4008L8.34443 11.1746C8.25603 11.083 8.15028 11.01 8.03336 10.9598C7.91644 10.9096 7.79069 10.8831 7.66344 10.882C7.53619 10.8809 7.41 10.9052 7.29222 10.9533C7.17445 11.0015 7.06745 11.0727 6.97747 11.1627C6.88749 11.2527 6.81633 11.3597 6.76814 11.4774C6.71996 11.5952 6.69571 11.7214 6.69681 11.8486C6.69792 11.9759 6.72436 12.1016 6.77458 12.2186C6.82481 12.3355 6.89781 12.4412 6.98935 12.5296L9.86435 15.4046C10.039 15.5793 10.2743 15.6798 10.5213 15.6852C10.7682 15.6905 11.0077 15.6003 11.1897 15.4334L16.9397 10.1626C17.127 9.99074 17.2384 9.75154 17.2494 9.4976C17.2604 9.24365 17.17 8.99575 16.9982 8.80843C16.8264 8.62111 16.5872 8.50971 16.3332 8.49875C16.0793 8.48779 15.8314 8.57815 15.6441 8.74997V8.74997Z"
+                                            fill="white" />
+                                    </svg>
+                                    Open an account </a>
+                            </div>
+                        </div>
+                        <div class="benefits__item" data-aos="fade-up" data-aos-delay="325">
+                            <img src="images/calculate.png" alt>
+                            <div class="benefits__item--text">
+                                <div class="benefits__item--title">Automated Trading</div>
+                                <div class="benefits__item--subtitle">Try your hand at automated trading even with out
+                                    knowing how to code</div>
+                                <a class="benefits__button button color" href="https://open.lime.co/register?package=3"
+                                    target="_blank">
+                                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.5002 1.31045C9.41522 1.31045 7.3771 1.92871 5.64353 3.08704C3.90996 4.24537 2.55881 5.89175 1.76094 7.81799C0.963064 9.74423 0.754304 11.8638 1.16106 13.9087C1.56781 15.9536 2.5718 17.8319 4.04608 19.3062C5.52036 20.7805 7.39871 21.7845 9.44359 22.1912C11.4885 22.598 13.608 22.3892 15.5343 21.5913C17.4605 20.7935 19.1069 19.4423 20.2652 17.7087C21.4236 15.9752 22.0418 13.9371 22.0418 11.8521C22.0385 9.0573 20.9268 6.3779 18.9506 4.40167C16.9744 2.42544 14.295 1.31374 11.5002 1.31045V1.31045ZM11.5002 20.4771C9.7943 20.4771 8.12675 19.9713 6.70837 19.0235C5.29 18.0758 4.18451 16.7288 3.53171 15.1528C2.8789 13.5767 2.7081 11.8425 3.04089 10.1695C3.37369 8.49637 4.19514 6.95954 5.40137 5.75332C6.6076 4.54709 8.14443 3.72564 9.81751 3.39284C11.4906 3.06004 13.2248 3.23085 14.8008 3.88365C16.3768 4.53646 17.7239 5.64194 18.6716 7.06032C19.6193 8.47869 20.1252 10.1462 20.1252 11.8521C20.1226 14.1388 19.2131 16.3311 17.5962 17.9481C15.9792 19.5651 13.7869 20.4746 11.5002 20.4771V20.4771Z"
+                                            fill="white" />
+                                        <path
+                                            d="M15.6441 8.74997L10.5706 13.4008L8.34443 11.1746C8.25603 11.083 8.15028 11.01 8.03336 10.9598C7.91644 10.9096 7.79069 10.8831 7.66344 10.882C7.53619 10.8809 7.41 10.9052 7.29222 10.9533C7.17445 11.0015 7.06745 11.0727 6.97747 11.1627C6.88749 11.2527 6.81633 11.3597 6.76814 11.4774C6.71996 11.5952 6.69571 11.7214 6.69681 11.8486C6.69792 11.9759 6.72436 12.1016 6.77458 12.2186C6.82481 12.3355 6.89781 12.4412 6.98935 12.5296L9.86435 15.4046C10.039 15.5793 10.2743 15.6798 10.5213 15.6852C10.7682 15.6905 11.0077 15.6003 11.1897 15.4334L16.9397 10.1626C17.127 9.99074 17.2384 9.75154 17.2494 9.4976C17.2604 9.24365 17.17 8.99575 16.9982 8.80843C16.8264 8.62111 16.5872 8.50971 16.3332 8.49875C16.0793 8.48779 15.8314 8.57815 15.6441 8.74997V8.74997Z"
+                                            fill="white" />
+                                    </svg>
+                                    Open an account </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="benefits__description"> *Commission-free trading only available through the Lime
+                            Trader
+                            platform. Free
+                            commission trading does not include
+                            options, OTCBB or Pink Sheets, or extended hours trading. Other fees, such as
+                            regulatory, service, or other fees, may
+                            apply. Please visit our <a href="https://lime.co/pricing/">Pricing Page</a> for further
+                            information. All investing incurs risk,
+                            including but not limited to
+                            loss of principal. Further information may be found on our <a
+                                href="https://lime.co/disclosure-statements/">Disclosures Page.</a></p>
+
+                        <p class="benefits__description">*Trading on margin is not appropriate for every investor.
+                            Please see our <a
+                                href="https://lime.co/wp-content/uploads/2022/03/Margin-Disclosure-Statement.pdf">Margin
+                                Disclosure
+                                Statement </a> for information on
+                            risks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slider" id="slider">
+            <div class="container">
+                <div class="slider__wrapper">
+                    <div class="slider__title title" data-aos="fade-up">Benefits of <span>MetaTrader 5</span></div>
+                    <div class="slider__init swiper">
+                        <div class="slider__list swiper-wrapper">
+                            <div class="slider__item swiper-slide" data-aos="fade-right" data-aos-delay="100">
+                                <div class="slider__item--img"><img src="images/tablets.png" alt></div>
+                                <div class="slider__item--title">Free multi-device terminal</div>
+                                <div class="slider__item--text">Trade on desktop, tablet, or mobile all on the same
+                                    platform, without a software fee</div>
+                            </div>
+                            <div class="slider__item swiper-slide" data-aos="fade-right" data-aos-delay="150">
+                                <div class="slider__item--img"><img src="./images/robot.png" alt></div>
+                                <div class="slider__item--title">Custom robots and indicators</div>
+                                <div class="slider__item--text">Explore MetaTrader Market, an online store for trading
+                                    robots, technical indicators, and other support solutions</div>
+                            </div>
+                            <div class="slider__item swiper-slide" data-aos="fade-right" data-aos-delay="200">
+                                <div class="slider__item--img"><img src="images/analitic.png" alt></div>
+                                <div class="slider__item--title"> Detailed analytics</div>
+                                <div class="slider__item--text">Open up to 100 charts simultaneously with quotes of
+                                    stocks and currencies. More than 80 technical indicators and analytical tools are
+                                    available to help with market analysis</div>
+                            </div>
+                            <div class="slider__item swiper-slide" data-aos="fade-right" data-aos-delay="250">
+                                <div class="slider__item--img"><img src="images/loudspeakers.png" alt></div>
+                                <div class="slider__item--title">MetaTrader 5 terminal news</div>
+                                <div class="slider__item--text">View news reports from world news agencies are promptly
+                                    sent directly to your platform so you can quickly make trading decisions.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__button--next">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.99016 7.00004C7.99016 7.25095 7.89435 7.50182 7.70315 7.69312L1.68341 13.7128C1.30048 14.0957 0.679623 14.0957 0.296847 13.7128C-0.0859282 13.33 -0.0859282 12.7093 0.296847 12.3263L5.62345 7.00004L0.297033 1.67371C-0.0857422 1.29078 -0.0857422 0.670113 0.297033 0.287368C0.679809 -0.0957489 1.30066 -0.0957489 1.68359 0.287368L7.70334 6.30696C7.89457 6.49835 7.99016 6.74922 7.99016 7.00004Z"
+                                fill="black" />
+                        </svg>
+                    </div>
+                    <div class="slider__button--prev">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.99016 7.00004C7.99016 7.25095 7.89435 7.50182 7.70315 7.69312L1.68341 13.7128C1.30048 14.0957 0.679623 14.0957 0.296847 13.7128C-0.0859282 13.33 -0.0859282 12.7093 0.296847 12.3263L5.62345 7.00004L0.297033 1.67371C-0.0857422 1.29078 -0.0857422 0.670113 0.297033 0.287368C0.679809 -0.0957489 1.30066 -0.0957489 1.68359 0.287368L7.70334 6.30696C7.89457 6.49835 7.99016 6.74922 7.99016 7.00004Z"
+                                fill="black" />
+                        </svg>
+                    </div>
+                    <div class="slider__pagination"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="header__logo footer__logo">
+                        <a href="https://lime.co"><img src="images/kopiya-lime-logo-for-web-white-and-green-01.png"
+                                alt></a>
+                    </div>
+                    <ul id="menu-menu-footer" class="footer__menu">
+                        <li id="menu-item-82"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-82"><a
+                                href="#main">Home</a></li>
+                        <li id="menu-item-83"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-83"><a
+                                href="#benefits">Benefits of Lime</a></li>
+                        <li id="menu-item-84"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-84"><a
+                                href="#slider">Benefits of MT5</a></li>
+                        <li id="menu-item-85"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-85"><a
+                                href="https://lime.co/privacy-policy/">Privacy policy</a></li>
+                    </ul>
+                    <div class="contacts">
+                        <a href="mailto:info@lime.co">info@lime.co</a>
+                        <div class="contacts__adress">One Penn Plaza, 16th Floor<br> New York, NY 10119</div>
+                        <div class="contacts__phones">
+                            <div class="contacts__phone"><a href="tel:+1(855)274-49-34">+1(855)274-49-34</a>(toll free)
+                            </div>
+                            <div class="contacts__phone"><a href="tel:646-558-3232">646-558-3232</a>(domestic)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="disklamer">
+                    <p> </p>
+                    <p> </p>
+                    <p> </p>
+                    <div id="cn_0" class="CommentContent">
+                        <div id="cn_0" class="CommentContent">
+                            <p style="font-weight: 400;">© 2022 Securities are offered by Lime Trading Corp., member <a
+                                    href="https://www.finra.org/">FINRA</a> & <a
+                                    href="https://www.sipc.org/">SIPC</a>,<a
+                                    href="https://www.nfa.futures.org/"> NFA</a>, Lime Advisory Corp is an investment
+                                adviser registered with the SEC. and Lime FinTech is a technology business. Collectively
+                                known as “Lime Financial” or “Lime” provide various trading, investment advisory
+                                services, and technology solutions including web and mobile trading applications, to
+                                retail and institutional investors. All investing incurs risk, including but not limited
+                                to loss of principal. Further information may be found on our <a
+                                    href="https://lime.co/disclosure-statements/">Disclosures Page</a>.</p>
+                            <p> </p>
+                            <p style="font-weight: 400;">Please read the following documents <a
+                                    href="https://www.theocc.com/Company-Information/Documents-and-Archives/Options-Disclosure-Document">Characteristics
+                                    and Risks of Standardized Options</a> before trading options.</p>
+                            <p> </p>
+                            <p style="font-weight: 400;">Options involve risk and are not suitable for all investors as
+                                the special risks inherent to options trading may expose investors to potentially rapid
+                                and substantial losses. Options trading privileges are subject to Lime Financial Corp.
+                                review and approval. Hedging and protective strategies generally involve additional
+                                costs and do not assure a profit or guarantee against loss. With long options, investors
+                                may lose 100% of funds invested. Covered calls provide income, downside protection only
+                                to the extent of the premium received, and limit upside potential to the strike price
+                                plus premium received. Multi-leg option orders are not a standard option trade. There is
+                                no national best bid or offer for multi-leg orders. Multi-leg trades are executed on the
+                                exchanges at the discretion of specialists or market makers, who cannot be held to a net
+                                price on a multi-leg order. Therefore, you may not receive the national best bid or
+                                offer on each individual leg of an order. Multi-leg orders are executed as a single
+                                trade on the same exchange. Legs cannot be executed separately on different exchanges to
+                                get the national best bid or offer for each leg. Each individual leg of a multi-leg
+                                order can be subject to early exercise risk, possibly taking away the protection that
+                                the multi-leg position may provide. Partial or full assignment on a leg may originate a
+                                margin call or losses greater than you anticipated when you entered into the position.
+                                When a multi-leg order is canceled or filled, additional reporting may be required by
+                                the specialist or market maker. Reporting fills and cancels may cause delays and create
+                                risks, especially in fast moving markets. Other risks might be associated with multi-leg
+                                options trading.</p>
+                            <p style="font-weight: 400;">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div><!-- #page -->
+
+    <script id="rocket-browser-checker-js-after">
+        "use strict"; var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, "value" in descriptor && (descriptor.writable = !0), Object.defineProperty(target, descriptor.key, descriptor) } } return function (Constructor, protoProps, staticProps) { return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), Constructor } }(); function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function") } var RocketBrowserCompatibilityChecker = function () { function RocketBrowserCompatibilityChecker(options) { _classCallCheck(this, RocketBrowserCompatibilityChecker), this.passiveSupported = !1, this._checkPassiveOption(this), this.options = !!this.passiveSupported && options } return _createClass(RocketBrowserCompatibilityChecker, [{ key: "_checkPassiveOption", value: function (self) { try { var options = { get passive() { return !(self.passiveSupported = !0) } }; window.addEventListener("test", null, options), window.removeEventListener("test", null, options) } catch (err) { self.passiveSupported = !1 } } }, { key: "initRequestIdleCallback", value: function () { !1 in window && (window.requestIdleCallback = function (cb) { var start = Date.now(); return setTimeout(function () { cb({ didTimeout: !1, timeRemaining: function () { return Math.max(0, 50 - (Date.now() - start)) } }) }, 1) }), !1 in window && (window.cancelIdleCallback = function (id) { return clearTimeout(id) }) } }, { key: "isDataSaverModeOn", value: function () { return "connection" in navigator && !0 === navigator.connection.saveData } }, { key: "supportsLinkPrefetch", value: function () { var elem = document.createElement("link"); return elem.relList && elem.relList.supports && elem.relList.supports("prefetch") && window.IntersectionObserver && "isIntersecting" in IntersectionObserverEntry.prototype } }, { key: "isSlowConnection", value: function () { return "connection" in navigator && "effectiveType" in navigator.connection && ("2g" === navigator.connection.effectiveType || "slow-2g" === navigator.connection.effectiveType) } }]), RocketBrowserCompatibilityChecker }();
+    </script>
+    <script id="rocket-preload-links-js-extra">
+        var RocketPreloadLinksConfig = { "excludeUris": "\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm", "siteUrl": "http:\/\/testtest2.site", "onHoverDelay": "100", "rateThrottle": "3" };
+    </script>
+    <script id="rocket-preload-links-js-after">
+        (function () {
+            "use strict"; var r = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (e) { return typeof e } : function (e) { return e && "function" == typeof Symbol && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e }, e = function () { function i(e, t) { for (var n = 0; n < t.length; n++) { var i = t[n]; i.enumerable = i.enumerable || !1, i.configurable = !0, "value" in i && (i.writable = !0), Object.defineProperty(e, i.key, i) } } return function (e, t, n) { return t && i(e.prototype, t), n && i(e, n), e } }(); function i(e, t) { if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function") } var t = function () { function n(e, t) { i(this, n), this.browser = e, this.config = t, this.options = this.browser.options, this.prefetched = new Set, this.eventTime = null, this.threshold = 1111, this.numOnHover = 0 } return e(n, [{ key: "init", value: function () { !this.browser.supportsLinkPrefetch() || this.browser.isDataSaverModeOn() || this.browser.isSlowConnection() || (this.regex = { excludeUris: RegExp(this.config.excludeUris, "i"), images: RegExp(".(" + this.config.imageExt + ")$", "i"), fileExt: RegExp(".(" + this.config.fileExt + ")$", "i") }, this._initListeners(this)) } }, { key: "_initListeners", value: function (e) { -1 < this.config.onHoverDelay && document.addEventListener("mouseover", e.listener.bind(e), e.listenerOptions), document.addEventListener("mousedown", e.listener.bind(e), e.listenerOptions), document.addEventListener("touchstart", e.listener.bind(e), e.listenerOptions) } }, { key: "listener", value: function (e) { var t = e.target.closest("a"), n = this._prepareUrl(t); if (null !== n) switch (e.type) { case "mousedown": case "touchstart": this._addPrefetchLink(n); break; case "mouseover": this._earlyPrefetch(t, n, "mouseout") } } }, { key: "_earlyPrefetch", value: function (t, e, n) { var i = this, r = setTimeout(function () { if (r = null, 0 === i.numOnHover) setTimeout(function () { return i.numOnHover = 0 }, 1e3); else if (i.numOnHover > i.config.rateThrottle) return; i.numOnHover++, i._addPrefetchLink(e) }, this.config.onHoverDelay); t.addEventListener(n, function e() { t.removeEventListener(n, e, { passive: !0 }), null !== r && (clearTimeout(r), r = null) }, { passive: !0 }) } }, { key: "_addPrefetchLink", value: function (i) { return this.prefetched.add(i.href), new Promise(function (e, t) { var n = document.createElement("link"); n.rel = "prefetch", n.href = i.href, n.onload = e, n.onerror = t, document.head.appendChild(n) }).catch(function () { }) } }, { key: "_prepareUrl", value: function (e) { if (null === e || "object" !== (void 0 === e ? "undefined" : r(e)) || !1 in e || -1 === ["http:", "https:"].indexOf(e.protocol)) return null; var t = e.href.substring(0, this.config.siteUrl.length), n = this._getPathname(e.href, t), i = { original: e.href, protocol: e.protocol, origin: t, pathname: n, href: t + n }; return this._isLinkOk(i) ? i : null } }, { key: "_getPathname", value: function (e, t) { var n = t ? e.substring(this.config.siteUrl.length) : e; return n.startsWith("/") || (n = "/" + n), this._shouldAddTrailingSlash(n) ? n + "/" : n } }, { key: "_shouldAddTrailingSlash", value: function (e) { return this.config.usesTrailingSlash && !e.endsWith("/") && !this.regex.fileExt.test(e) } }, { key: "_isLinkOk", value: function (e) { return null !== e && "object" === (void 0 === e ? "undefined" : r(e)) && (!this.prefetched.has(e.href) && e.origin === this.config.siteUrl && -1 === e.href.indexOf("?") && -1 === e.href.indexOf("#") && !this.regex.excludeUris.test(e.href) && !this.regex.images.test(e.href)) } }], [{ key: "run", value: function () { "undefined" != typeof RocketPreloadLinksConfig && new n(new RocketBrowserCompatibilityChecker({ capture: !0, passive: !0 }), RocketPreloadLinksConfig).init() } }]), n }(); t.run();
+        }());
+    </script>
+    <script src="js/swiper-bundle.min.js" id="limex-swiper-js"></script>
+    <script src="js/aos.js" id="limex-aos-js"></script>
+    <script src="js/app.min.js" id="limex-main-js"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/7051690.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6R2WVD2KZZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6R2WVD2KZZ');
+    </script>
+
+
+    <!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1661853981 -->
+</body>
+
+</html>
