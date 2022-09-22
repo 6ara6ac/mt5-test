@@ -272,6 +272,11 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
   }
 }
 
+@media screen and (max-width: 1210px) {
+  .header .buttons {
+    column-gap: 7px;
+  }
+
 
 @media screen and (min-width: 1210px) {
   .header .buttons {
