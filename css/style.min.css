@@ -417,7 +417,6 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
   align-items: flex-start;
   font-size: 18px;
   -ms-flex-align: 24px;
-  align-items: 24px;
   margin-bottom: unset;
 }
 .mob__header .mob__menu li {
@@ -1581,4 +1580,5 @@ border-right: 1px solid rgba(0, 0, 0, 0.6);
 
 .benefits__description a {
   text-decoration: underline;
+}
 }
