@@ -38,6 +38,6 @@ RewriteCond %{REQUEST_fileNAME} !-f
 RewriteRule (.*) /$1.html [L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://ВАШ_САЙТ/ [R=301,L]
+RewriteRule ^index\.html$ https://https://mt5.lime.co [R=301,L]
 
 Redirect 301 /index https://https://mt5.lime.co
