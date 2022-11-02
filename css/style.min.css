@@ -237,6 +237,8 @@ body {
   display: flex;
   padding: 10px;
   margin-left: 40px;
+  align-items: center;
+
 }
 
 @media screen and (max-width:1209px) {
@@ -288,12 +290,12 @@ body {
   }
   .header .buttons .color {
     grid-area: unset;
-    color: #000;
-    background: #fff;
+    color: #fff;
+    background: hsla(0, 0%, 92%, 0.5);
     transition: all 0.3s ease;
   }
   .header .buttons .color:hover {
-    background: #8abf1a;
+    background: #47630a54;
     color: #fff;
   }
 }
@@ -500,6 +502,7 @@ body {
   border: unset;
   color: #fff;
   background: #8abf1a;
+  font-size: 25px;
   border-radius: 12px;
   padding: 8px 6px 10px;
   font-family: Gilroy-Semi, sans-serif;
@@ -545,17 +548,43 @@ body {
   flex-direction: column;
   -ms-flex-align: center;
   align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
-  width: 35px;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+  border-radius: 100px;
+  margin-left: 5px;
 }
+
+@media screen and (min-width: 767px) {
+  .enter {
+  width: 35px;
+  height: 35px;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .enter {
+  width: 34px;
+  height: 34px;
+  }
+}
+
 .enter:hover {
   transform: scale(1.2);
+  border: 2px solid #8abf1a;
 }
 @media screen and (min-width: 1210px) {
   .enter img {
     width: 20px;
     height: 20px;
   }
+}
+
+.enter__img {
+  width: 70%;
+  height: 70%;
 }
 .footer {
   position: relative;
@@ -869,7 +898,7 @@ body {
 .main__button {
   width: 100%;
   font-family: Gilroy-Bold;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 27px;
   margin-bottom: 40px;
   padding: 15px 24px 18px;
@@ -1163,7 +1192,7 @@ body {
 .benefits__button {
   width: 100%;
   padding: 13px 20px 15px;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 27px;
   transition: all 0.3s ease;
 }
