@@ -505,7 +505,8 @@ body {
   font-family: Gilroy-Semi, sans-serif;
 }
 .color svg {
-  display: none;
+  display: block;
+  fill: #fff;
 }
 .color:hover svg path {
   fill: #fff;
@@ -516,7 +517,7 @@ body {
   }
 }
 .buttons {
-  display: grid;
+  display: flex;
   grid-template-columns: 128px 156px 16px;
   -ms-flex-align: center;
   align-items: center;
@@ -545,6 +546,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   transition: all 0.3s ease;
+  width: 35px;
 }
 .enter:hover {
   transform: scale(1.2);
