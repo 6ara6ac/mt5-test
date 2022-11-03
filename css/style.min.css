@@ -146,7 +146,7 @@ body {
 .header {
   position: relative;
   z-index: 5;
-  padding: 70px 0 10px;
+  padding: 20px 0 10px;
   transition: all 0.5s ease !important;
 }
 .header .container {
@@ -195,8 +195,6 @@ body {
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
-  position: absolute;
-  top: 10px;
   width: 90%;
   height: 50px;
 }
@@ -363,7 +361,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  gap: 100px;
   z-index: 1000;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
@@ -410,7 +408,8 @@ body {
   flex-direction: column;
   -ms-flex-align: start;
   align-items: flex-start;
-  font-size: 18px;
+  font-size: 35px;
+  gap: 80px;
   -ms-flex-align: 24px;
   margin-bottom: unset;
 }
