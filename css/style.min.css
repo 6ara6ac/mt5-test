@@ -252,12 +252,6 @@ body {
   width: 40px;
 }
 
-@media screen and (max-width:767px) {
-  .language-icon {
-    height: 30px;
-    width: 30px;
-  }
-}
 
 
 .language-icon.is-active {
@@ -549,26 +543,13 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   border: 2px solid #000;
   border-radius: 100px;
   margin-left: 5px;
 }
 
-@media screen and (min-width: 767px) {
-  .enter {
-  width: 35px;
-  height: 35px;
-  }
-}
-
-@media screen and (min-width: 1199px) {
-  .enter {
-  width: 34px;
-  height: 34px;
-  }
-}
 
 .enter:hover {
   transform: scale(1.2);
