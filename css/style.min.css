@@ -193,10 +193,10 @@ body {
 }
 .header__logo {
   cursor: pointer;
-  width: 100%;
+  width: auto;
   transition: all 0.3s ease;
-  width: 230px;
-  height: 50px;
+  width: 130px;
+  height: 40px;
 }
 .header__logo:hover {
   transform: scale(1.1);
@@ -204,6 +204,7 @@ body {
 .header__logo img {
   -o-object-fit: contain;
   object-fit: contain;
+  width: 180px;
 }
 @media screen and (min-width: 1210px) {
   .header__logo {
@@ -300,7 +301,7 @@ body {
   position: relative;
   cursor: pointer;
   width: 30px;
-  height: 26px;
+  height: 30px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -310,19 +311,20 @@ body {
 .header__burger:before,
 .header__burger span {
   content: '';
-  width: 24px;
-  height: 2px;
+  width: 28px;
+  height: 4px;
   position: absolute;
   right: 0;
   display: block;
   border-radius: 2px;
-  background: #000;
+  line-height: 4px;
+  background: rgb(0, 0, 0);
   transition: all 0.2s;
 }
 .header__burger span {
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
+  width: 28px;
 }
 .header__burger:before {
   top: 6px;
@@ -547,7 +549,7 @@ body {
   height: 45px;
   border: 2px solid #000;
   border-radius: 100px;
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 
@@ -725,6 +727,7 @@ body {
 }
 @media screen and (min-width: 1210px) {
   .footer__menu {
+    font-size: 27px;
     margin-bottom: unset;
     -ms-flex-wrap: unset;
     flex-wrap: unset;
@@ -875,7 +878,7 @@ body {
 }
 .main__button {
   width: 100%;
-  font-family: Gilroy-Bold;
+  font-family: Gilroy-Semi, sans-serif;
   font-size: 25px;
   line-height: 27px;
   margin-bottom: 40px;
@@ -904,6 +907,8 @@ body {
   background: #f4f4f4;
   border-radius: 6.88066px;
   text-align: center;
+  height: 100%;
+
 }
 .main__tabs--item--title {
   font-size: 22px;
@@ -968,11 +973,11 @@ body {
 @media screen and (min-width: 1210px) {
   .main__image:before {
     border-radius: 0 0 154.117px 154.117px;
-    transform: rotate(42.69deg);
+    transform: rotate(34deg);
     width: 934.97px;
     height: 971.16px;
     top: -72%;
-    right: -72%;
+    right: -78%;
     left: unset;
   }
 }
