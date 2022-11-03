@@ -185,7 +185,7 @@ body {
   .header__menu {
     display: -ms-flexbox !important;
     display: flex !important;
-    font-size: 27px;
+    font-size: 25px;
     margin-bottom: unset;
     -ms-flex-wrap: unset;
     flex-wrap: unset;
@@ -992,11 +992,11 @@ body {
 @media screen and (min-width: 1210px) {
   .main__image:before {
     border-radius: 0 0 154.117px 154.117px;
-    transform: rotate(34deg);
+    transform: rotate(23deg);
     width: 934.97px;
     height: 971.16px;
-    top: -72%;
-    right: -78%;
+    top: -90%;
+    right: -74%;
     left: unset;
   }
 }
