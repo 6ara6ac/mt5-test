@@ -402,8 +402,8 @@ body {
   flex-direction: column;
   -ms-flex-align: start;
   align-items: flex-start;
-  font-size: 35px;
-  gap: 80px;
+  font-size: 30px;
+  gap: 60px;
   -ms-flex-align: 24px;
   margin-bottom: unset;
 }
