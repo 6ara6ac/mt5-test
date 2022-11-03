@@ -195,7 +195,7 @@ body {
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
-  width: 90%;
+  width: 230px;
   height: 50px;
 }
 .header__logo:hover {
@@ -248,8 +248,8 @@ body {
 
 
 .language-icon {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 
 
@@ -543,8 +543,8 @@ body {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  width: 35px;
-  height: 35px;
+  width: 5px;
+  height: 45px;
   border: 2px solid #000;
   border-radius: 100px;
   margin-left: 5px;
@@ -850,9 +850,7 @@ body {
     width: 1610px;
   }
 }
-.main__text {
-  margin-bottom: 40px;
-}
+
 @media screen and (min-width: 1690px) {
   .main__text {
     margin-top: 100px;
@@ -899,13 +897,12 @@ body {
   display: grid;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 .main__tabs--item {
   padding: 15px 22px 16px;
   background: #f4f4f4;
   border-radius: 6.88066px;
-  margin-bottom: 20px;
   text-align: center;
 }
 .main__tabs--item--title {
