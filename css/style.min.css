@@ -1271,8 +1271,17 @@ margin-top: 80px;
 }
 .slider__init {
   margin: 40px auto;
-  width: 767px !important;
+  width: 280px !important;
 }
+
+@media screen and (min-width:767px) and (max-width: 1209px) {
+  .slider__init {
+    margin: 40px auto;
+    width: 600px !important;
+    height: 300px;
+  }
+}
+
 @media screen and (min-width: 1210px) {
   .slider__init {
     width: 1085px !important;
