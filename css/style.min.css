@@ -1228,6 +1228,19 @@ margin-top: 80px;
   line-height: 27px;
   transition: all 0.3s ease;
 }
+
+@media screen and (min-width:500px) and (max-width:1209px) {
+  .benefits__button{
+   width: 450px;
+  }
+}
+
+@media screen and (max-width:499px) {
+  .benefits__button{
+   width: 256px;
+  }
+}
+
 .benefits__button:hover {
   background: #60dd68;
 }
