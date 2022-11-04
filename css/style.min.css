@@ -805,6 +805,13 @@ body {
   position: relative;
   padding: 52px 0;
 }
+
+@media screen and (min-width: 767px) and (max-width:1209px) {
+  .main { 
+    padding-bottom: 0;
+}
+}
+
 @media screen and (min-width: 1210px) {
   .main {
     padding: 0;
@@ -976,17 +983,17 @@ body {
   position: absolute;
   width: 100%;
   height: 226%;
-  top: -50%;
+  top: -60%;
   background: #8abf1a;
   z-index: -1;
   transform: rotate(111.49deg);
 }
-@media screen and (min-width: 688px) {
+@media screen and (min-width: 767px) {
   .main__image:before {
-    width: 148%;
+    width: 48%;
     height: 336%;
-    top: -110%;
-    left: -40%;
+    top: -144%;
+    left: -30%;
   }
 }
 @media screen and (min-width: 1210px) {
@@ -1010,28 +1017,44 @@ body {
     right: -52%;
   }
 }
+
+
 .main__image--tablet {
   /* width: 320px; */
   max-height: 800px;
   -o-object-fit: unset;
   object-fit: unset;
 }
-@media screen and (min-width: 1210px) {
-  .main__image--tablet {
-    display: none;
-  }
+
+.main__image--tablet {
+  display: none;
 }
+
+@media screen and (min-width: 768px) and (max-width:1209px){
+.main__image--tablet {
+  display: block;
+/* width: 320px; */
+max-height: 800px;
+-o-object-fit: unset;
+object-fit: unset;  
+margin-top: 80px;
+}
+}
+
 .main__image--phone {
-  position: absolute;
-  width: 125px;
-  height: 256.29px;
-  z-index: -1;
-  left: 65px;
-  top: 102px;
-  -o-object-fit: contain;
-  object-fit: contain;
+  display: none;
 }
-@media screen and (min-width: 1210px) {
+@media screen and (max-width:767px) {
+  .main__image--phone {
+    display: block;
+    /* width: 320px; */
+    max-height: 800px;
+    -o-object-fit: unset;
+    object-fit: unset;
+}
+}
+
+@media screen and (min-width: 767px) {
   .main__image--phone {
     width: 165.36px;
     height: 353.38px;
@@ -1050,6 +1073,7 @@ body {
 .main__image--pc {
   display: none;
 }
+
 @media screen and (min-width: 1210px) {
   .main__image--pc {
     display: block;
@@ -1190,8 +1214,15 @@ body {
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 40px;
 }
+
+.benefits__item--text {
+  display: grid;
+  justify-items: center;
+}
+
 .benefits__button {
   width: 100%;
+  max-width: 450px;
   padding: 13px 20px 15px;
   font-size: 25px;
   line-height: 27px;
@@ -1240,7 +1271,7 @@ body {
 }
 .slider__init {
   margin: 40px auto;
-  width: 280px !important;
+  width: 767px !important;
 }
 @media screen and (min-width: 1210px) {
   .slider__init {
@@ -1491,7 +1522,7 @@ body {
   border-radius: 0 0 54.12px 54.12px;
   transform: matrix(0.37, 0.93, 0.93, -0.37, 0, 0);
 }
-@media screen and (min-width: 688px) {
+@media screen and (min-width: 767px) {
   .last__image:before {
     width: 267%;
     height: 406%;
